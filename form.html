@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>  
+<body ng-app="">
+
+<p>Cadastro:</p>
+
+<form name="cadastro">
+<p>Name:
+<input name="nome" ng-model="nome" required>
+<span ng-show="cadastro.nome.$touched && cadastro.nome.$invalid">Campo obrigatorio.</span>
+</p>
+
+<p>Endereço:
+<input name="endereco" ng-model="endereco" required>
+<span ng-show="cadastro.endereco.$touched && cadastro.endereco.$invalid">Campo obrigatorio.</span>
+</p>
+
+<p>CEP:
+<input name="cep" ng-model="cep" required>
+<span ng-show="cadastro.cep.$touched && cadastro.cep.$invalid">Campo obrigatorio.</span>
+</p>
+
+<p>CNPJ:
+<input name="cnpj" ng-model="cnpj" required>
+<span ng-show="cadastro.cnpj.$touched && cadastro.cnpj.$invalid">Campo obrigatorio.</span>
+</p>
+
+<p>Descricao:
+<textarea cols="20" rows="3" name="descricao" ng-model="descricao" required></textarea>
+<span ng-show="cadastro.descricao.$touched && cadastro.descricao.$invalid">Campo obrigatorio.</span>
+</p>
+
+<p>Cardapio:
+<textarea cols="20" rows="3" name="cardapio" ng-model="cardapio" required></textarea>
+<span ng-show="cadastro.cardapio.$touched && cadastro.cardapio.$invalid">Campo obrigatorio.</span>
+</p>
+
+<!-- descrição e cardapio -->
+
+<button type="submit" name="submit" 
+ng-disabled="cadastro.nome.$invalid || 
+			 cadastro.endereco.$invalid ||
+			 cadastro.cep.$invalid ||
+			 cadastro.cnpj.$invalid ||
+			 cadastro.descricao.$invalid ||
+			 cadastro.cardapio.$invalid">
+Enviar</button>
+</form>
+
+</body>
+</html>
